@@ -1,0 +1,32 @@
+.videocard {
+	width: 100vw;
+	display: flex;
+	justify-content: space-between;
+
+	&__poster {
+		width: 45%;
+
+		&-image {
+			width: 100%;
+		}
+	}
+
+	&__description {
+		width: 45%;
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+
+		&-title {
+			color: grey;
+			font-size: 0.8125rem;
+			font-weight: 700;
+		}
+
+		&-channel {
+			color: grey;
+			font-size: 0.8125rem;
+			font-weight: 400;
+		}
+	}
+}

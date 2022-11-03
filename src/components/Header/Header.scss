@@ -1,0 +1,25 @@
+.navigation {
+	&__search-input {
+		background-image: url(../../assets/icons/search.svg);
+		background-position: left;
+		padding: 0.5rem;
+		background-size: 1rem;
+		background-repeat: no-repeat;
+		border-radius: 0.4rem;
+
+		background-clip: content-box;
+		background-origin: content-box;
+
+		&::placeholder {
+			padding: 1.5rem;
+			color: blue;
+		}
+	}
+
+	&__avatar {
+		background: url(../../assets/images/Mohan-muruge.jpg) no-repeat center/cover;
+		width: 2.25rem;
+		height: 2.25rem;
+		border-radius: 50%;
+	}
+}

@@ -1,1 +1,0 @@
-import "./CommentList.scss";
