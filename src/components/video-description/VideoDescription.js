@@ -3,7 +3,8 @@ import ViewsIcon from "../../assets/icons/views.svg";
 import LikesIcon from "../../assets/icons/likes.svg";
 
 const VideoDescription = ({ videoDetails }) => {
-	const { title, channel, image, description, views, likes, timestamp, ...rest } = videoDetails;
+	const { title, channel, image, description, views, likes, timestamp, comment, ...rest } =
+		videoDetails;
 
 	return (
 		<>
@@ -29,7 +30,11 @@ const VideoDescription = ({ videoDetails }) => {
 			<div className="videoInfo__description">
 				<p className="videoInfo__descriptionText">{videoDetails.description}</p>
 			</div>
-			<p className="videoInfo__commentsTotal">{videoDetails.comments.length} Comments</p>
+			{videoDetails.comments.length > 0 ? (
+				<p className="videoInfo__commentsTotal">{videoDetails.comments.length} Comments</p>
+			) : (
+				<p className="videoInfo__commentsTotal">No Comments</p>
+			)}
 		</>
 	);
 };

@@ -18,6 +18,13 @@ const App = () => {
 	const [videos, setVideos] = useState(getVideos(videoId));
 	const [videoDescription, setVideoDescription] = useState(getVideoDescription(videoId));
 
+	const handleClick = (clickEvent, videoIdClickedOn) => {
+		console.log(clickEvent, videoIdClickedOn);
+		setVideoId(videoIdClickedOn);
+		setVideos(getVideos(videoIdClickedOn));
+		setVideoDescription(getVideoDescription(videoIdClickedOn));
+	};
+
 	return (
 		<>
 			<Header />
@@ -30,7 +37,7 @@ const App = () => {
 				<CommentCard comments={videoDescription.comments} />
 			</CommentBlock>
 			<NextVideo>
-				<VideoCard videos={videos} />
+				<VideoCard videos={videos} onClick={handleClick} />
 			</NextVideo>
 		</>
 	);

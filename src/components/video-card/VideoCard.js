@@ -1,11 +1,17 @@
 import "./VideoCard.scss";
 import React from "react";
 
-const VideoCard = ({ videos }) => {
+const VideoCard = ({ videos, onClick }) => {
 	return (
-		<section>
+		<>
 			{videos.map((video) => (
-				<section className="videocard" key={video.id}>
+				<section
+					className="videocard"
+					key={video.id}
+					onClick={(clickEvent) => {
+						onClick(clickEvent, video.id);
+					}}
+				>
 					<div className="videocard__poster">
 						<img
 							className="videocard__poster-image"
@@ -19,7 +25,7 @@ const VideoCard = ({ videos }) => {
 					</div>
 				</section>
 			))}
-		</section>
+		</>
 	);
 };
 
