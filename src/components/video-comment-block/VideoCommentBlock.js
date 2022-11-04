@@ -1,1 +1,0 @@
-import "./VideoCommentBlock.scss";

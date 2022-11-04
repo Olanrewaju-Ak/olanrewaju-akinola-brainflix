@@ -3,7 +3,7 @@ import "./VideoDisplayInfo.scss";
 import VideoDescription from "../video-description/VideoDescription";
 
 const VideoDisplayInfo = ({ children }) => {
-	return <section className="videoinfo">{children}</section>;
+	return <section className="videoInfo">{children}</section>;
 };
 
 export default VideoDisplayInfo;

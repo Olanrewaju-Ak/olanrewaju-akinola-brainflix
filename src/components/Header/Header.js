@@ -1,6 +1,8 @@
 import React from "react";
 import "./Header.scss";
 import LogoImage from "../../assets/logo/BrainFlix-logo.svg";
+import SearchIcon from "../../assets/icons/search.svg";
+import UploadIcon from "../../assets/icons/upload.svg";
 
 const Header = () => {
 	return (
@@ -10,17 +12,29 @@ const Header = () => {
 					<a href="brainflix.com" className="navigation__logo-link">
 						<img src={LogoImage} alt="band-logo" className="navigation__logo-img" />
 					</a>
-					<div className="navigation__search">
-						<div>
-							<input
-								className="navigation__search-input"
-								type="text"
-								name="search"
-								placeholder="Search"
-							/>
+					<div className="navigation__wrapper">
+						<div className="navigation__wrapper-search">
+							<form action="" className="navigation__form">
+								<button className="icon__btn">
+									<img
+										className="icon__search-img"
+										src={SearchIcon}
+										alt="search-icon"
+									/>
+								</button>
+								<input
+									className="navigation__form-input"
+									type="text"
+									name="search"
+									placeholder="Search"
+								/>
+							</form>
 							<div className="navigation__avatar"></div>
 						</div>
-						<button></button>
+						<button className="btn">
+							<img className="icon__upload" src={UploadIcon} alt="upload-icon" />
+							UPLOAD
+						</button>
 					</div>
 				</nav>
 			</header>

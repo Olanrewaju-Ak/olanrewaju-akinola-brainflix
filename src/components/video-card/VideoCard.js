@@ -3,7 +3,7 @@ import React from "react";
 
 const VideoCard = ({ videos }) => {
 	return (
-		<>
+		<section>
 			{videos.map((video) => (
 				<section className="videocard" key={video.id}>
 					<div className="videocard__poster">
@@ -19,7 +19,7 @@ const VideoCard = ({ videos }) => {
 					</div>
 				</section>
 			))}
-		</>
+		</section>
 	);
 };
 

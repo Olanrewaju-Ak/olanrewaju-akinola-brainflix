@@ -1,10 +1,16 @@
 import React from "react";
 import "./VideoDisplay.scss";
 
-const VideoDisplay = () => {
+const VideoDisplay = ({ videoDetails }) => {
+	const { image, title, ...rest } = videoDetails;
 	return (
 		<section className="videoDisplay">
-			<h1>Video</h1>
+			<video
+				src=""
+				className="videoDisplay__video"
+				controls
+				poster={videoDetails.image}
+			></video>
 		</section>
 	);
 };

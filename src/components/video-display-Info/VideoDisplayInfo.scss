@@ -1,0 +1,11 @@
+@use "../../styles/partials/colors" as color;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as breakpoint;
+
+@include breakpoint.small {
+	.videoInfo {
+		width: 100vw;
+		background-color: color.$primary-light;
+		padding: 0 1rem;
+	}
+}
