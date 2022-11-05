@@ -5,7 +5,21 @@
 @include breakpoint.small {
 	.video-display {
 		width: 100vw;
-		max-height: 35vh;
+		max-height: 40vh;
+		background-color: color.$secondary-dark;
+
+		&__video {
+			width: 100vw;
+			max-height: 35vh;
+			aspect-ratio: 16/9;
+		}
+	}
+}
+
+@include breakpoint.medium {
+	.video-display {
+		min-width: 100vw;
+		max-height: 40vh;
 		background-color: color.$secondary-dark;
 
 		&__video {

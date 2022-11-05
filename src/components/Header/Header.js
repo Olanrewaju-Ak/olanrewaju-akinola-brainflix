@@ -8,7 +8,7 @@ const Header = () => {
 	return (
 		<>
 			<header className="header__container">
-				<nav className="navigation">
+				<nav className="navigation navigation--mobile">
 					<a href="brainflix.com" className="navigation__logo-link">
 						<img src={LogoImage} alt="band-logo" className="navigation__logo-img" />
 					</a>
@@ -29,12 +29,13 @@ const Header = () => {
 									placeholder="Search"
 								/>
 							</form>
-							<div className="navigation__avatar"></div>
+							<div className="navigation__avatar navigation__avatar--mobile"></div>
 						</div>
 						<button className="btn">
 							<img className="icon__upload" src={UploadIcon} alt="upload-icon" />
 							UPLOAD
 						</button>
+						<div className="navigation__avatar navigation__avatar--tablet"></div>
 					</div>
 				</nav>
 			</header>

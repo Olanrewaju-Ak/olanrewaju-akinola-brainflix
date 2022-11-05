@@ -8,7 +8,7 @@
 		padding-top: 0.875rem;
 		@include flex-row-space-btw;
 		align-items: flex-start;
-		gap: 3%;
+		gap: 5%;
 
 		&__img {
 			width: 2.25rem;
@@ -17,7 +17,7 @@
 			background-color: color.$secondary-semi-light;
 		}
 		&__info-wrap {
-			width: 82%;
+			width: 75%;
 		}
 
 		&__info {

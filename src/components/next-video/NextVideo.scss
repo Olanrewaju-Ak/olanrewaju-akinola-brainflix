@@ -4,7 +4,7 @@
 
 @include breakpoint.small {
 	.next-video {
-		padding: 0 1rem;
+		padding: 0 1rem 0.5rem;
 
 		&__header {
 			@include text-body__mobile--light;
