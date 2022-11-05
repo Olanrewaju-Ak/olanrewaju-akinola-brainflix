@@ -2,36 +2,38 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/breakpoints" as breakpoint;
 
-.comment-item {
-	border-bottom: 1px solid color.$secondary-semi-light;
-	padding-top: 0.875rem;
-	@include flex-row-space-btw;
-	align-items: flex-start;
-	gap: 3%;
-
-	&__img {
-		width: 2.25rem;
-		height: 2.25rem;
-		border-radius: 50%;
-		background-color: color.$secondary-semi-light;
-	}
-	&__info-wrap {
-		width: 82%;
-	}
-
-	&__info {
+@include breakpoint.small {
+	.comment-item {
+		border-bottom: 1px solid color.$secondary-semi-light;
+		padding-top: 0.875rem;
 		@include flex-row-space-btw;
-		justify-content: space-between;
-	}
+		align-items: flex-start;
+		gap: 3%;
 
-	&__name {
-		@include text-body__mobile--bold;
-	}
+		&__img {
+			width: 2.25rem;
+			height: 2.25rem;
+			border-radius: 50%;
+			background-color: color.$secondary-semi-light;
+		}
+		&__info-wrap {
+			width: 82%;
+		}
 
-	&__date {
-		@include text-body__mobile--light;
-	}
-	&__user-comment {
-		@include text-body__mobile;
+		&__info {
+			@include flex-row-space-btw;
+			justify-content: space-between;
+		}
+
+		&__name {
+			@include text-body__mobile--bold;
+		}
+
+		&__date {
+			@include text-body__mobile--light;
+		}
+		&__user-comment {
+			@include text-body__mobile;
+		}
 	}
 }

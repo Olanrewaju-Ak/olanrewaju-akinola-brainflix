@@ -2,70 +2,72 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/breakpoints" as breakpoint;
 
-.comment {
-	&-form {
+@include breakpoint.small {
+	.comment {
+		&-form {
+			width: 100%;
+
+			&__layout {
+				@include flex-row-space-btw;
+				align-items: flex-start;
+				border-bottom: 1px solid color.$secondary-semi-light;
+				gap: 3%;
+			}
+		}
+	}
+
+	.user-avatar {
+		background: url(../../assets/images/Mohan-muruge.jpg) center/cover;
+		height: 2.25rem;
+		width: 2.25rem;
+		border-radius: 50%;
+		margin-top: 1.3rem;
+		margin-right: 0.0625rem;
+	}
+
+	.form {
+		width: 85%;
+		padding-bottom: 1rem;
+
+		&-field__input {
+			background-color: color.$secondary-light;
+			@include text-body__mobile;
+			@include border-default;
+			min-height: 2.25rem;
+			width: 100%;
+			border-radius: 0.25rem;
+			padding: 0.75rem;
+			margin-bottom: 1rem;
+
+			&::placeholder {
+				font-family: "avenir";
+				font-size: 0.875rem;
+				color: color.$primary-dark;
+			}
+
+			&:focus {
+				outline: 1px solid color.$primary-dark;
+			}
+		}
+		&-field__label {
+			@include text-body__mobile--light;
+			font-weight: 700;
+		}
+	}
+
+	.btn {
+		@include btn-accent;
 		width: 100%;
-
-		&__layout {
-			@include flex-row-space-btw;
-			align-items: flex-start;
-			border-bottom: 1px solid color.$secondary-semi-light;
-			gap: 3%;
-		}
+		position: relative;
+		font-size: 0.75rem;
 	}
-}
 
-.user-avatar {
-	background: url(../../assets/images/Mohan-muruge.jpg) center/cover;
-	height: 2.25rem;
-	width: 2.25rem;
-	border-radius: 50%;
-	margin-top: 1.3rem;
-	margin-right: 0.0625rem;
-}
-
-.form {
-	width: 85%;
-	padding-bottom: 1rem;
-
-	&-field__input {
-		background-color: color.$secondary-light;
-		@include text-body__mobile;
-		@include border-default;
-		min-height: 2.25rem;
-		width: 100%;
-		border-radius: 0.25rem;
-		padding: 0.75rem;
-		margin-bottom: 1rem;
-
-		&::placeholder {
-			font-family: "avenir";
-			font-size: 0.875rem;
-			color: color.$primary-dark;
-		}
-
-		&:focus {
-			outline: 1px solid color.$primary-dark;
-		}
+	.icon__add-comment {
+		position: absolute;
+		width: 1rem;
+		height: 1rem;
+		top: 25%;
+		left: 0.5rem;
+		height: 1.2rem;
 	}
-	&-field__label {
-		@include text-body__mobile--light;
-		font-weight: 700;
-	}
-}
-
-.btn {
-	@include btn-accent;
-	width: 100%;
-	position: relative;
-	font-size: 0.75rem;
-}
-
-.icon__add-comment {
-	position: absolute;
-	width: 1rem;
-	height: 1rem;
-	top: 25%;
-	left: 0.5rem;
-	height: 1.2rem;
 }

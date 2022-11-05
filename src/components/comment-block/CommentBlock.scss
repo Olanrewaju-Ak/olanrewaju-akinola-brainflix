@@ -2,6 +2,8 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/breakpoints" as breakpoint;
 
-.comment-block {
-	padding: 0 1rem;
+@include breakpoint.small {
+	.comment-block {
+		padding: 0 1rem;
+	}
 }
