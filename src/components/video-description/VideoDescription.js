@@ -14,7 +14,9 @@ const VideoDescription = ({ videoDetails }) => {
 			<div className="videoInfo__misc">
 				<div className="videoInfo__origin">
 					<p className="videoInfo__origin-text">By {videoDetails.channel}</p>
-					<p className="videoInfo__origin-text--light">{videoDetails.timestamp}</p>
+					<p className="videoInfo__origin-text--light">
+						{new Date(videoDetails.timestamp).toLocaleDateString()}
+					</p>
 				</div>
 				<div className="videoInfo__icons">
 					<div className="viewsIcon">

@@ -3,15 +3,15 @@
 @use "../../styles/partials/breakpoints" as breakpoint;
 
 @include breakpoint.small {
-	.videoDisplay {
+	.video-display {
 		width: 100vw;
 		max-height: 35vh;
 		background-color: color.$secondary-dark;
-		// aspect-ratio: 16/9;
 
 		&__video {
 			width: 100vw;
 			max-height: 35vh;
+			aspect-ratio: 16/9;
 		}
 	}
 }

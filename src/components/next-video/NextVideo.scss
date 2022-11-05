@@ -1,0 +1,12 @@
+@use "../../styles/partials/colors" as color;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as breakpoint;
+
+.next-video {
+	padding: 0 1rem;
+
+	&__header {
+		@include text-body__mobile--light;
+		font-weight: 700;
+	}
+}

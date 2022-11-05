@@ -6,22 +6,22 @@ const VideoCard = ({ videos, onClick }) => {
 		<>
 			{videos.map((video) => (
 				<section
-					className="videocard"
+					className="video-card"
 					key={video.id}
 					onClick={(clickEvent) => {
 						onClick(clickEvent, video.id);
 					}}
 				>
-					<div className="videocard__poster">
+					<div className="video-card__poster">
 						<img
-							className="videocard__poster-image"
+							className="video-card__poster-image"
 							src={video.image}
 							alt={video.title}
 						/>
 					</div>
-					<div className="videocard__description">
-						<h2 className="videocard__description-title">{video.title}</h2>
-						<p className="videocard__description-channel">{video.channel}</p>
+					<div className="video-card__description">
+						<p className="video-card__description-title">{video.title}</p>
+						<p className="video-card__description-channel">{video.channel}</p>
 					</div>
 				</section>
 			))}

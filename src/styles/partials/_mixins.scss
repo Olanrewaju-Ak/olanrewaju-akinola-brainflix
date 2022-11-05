@@ -10,7 +10,6 @@
 
 @mixin flex-row-space-btw {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 }
 
@@ -52,6 +51,12 @@
 	color: color.$primary-dark;
 }
 
+@mixin text-header--light {
+	font-family: "avenir";
+	font-weight: 700;
+	color: color.$primary-semi-light;
+}
+
 @mixin text-body {
 	font-family: "avenir";
 	font-weight: 400;
@@ -61,6 +66,11 @@
 // Text-mobile
 @mixin text-header__mobile {
 	@include text-header();
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+@mixin text-header__mobile--light {
+	@include text-header--light();
 	font-size: 1.5rem;
 	line-height: 2rem;
 }

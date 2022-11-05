@@ -1,0 +1,7 @@
+@use "../../styles/partials/colors" as color;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as breakpoint;
+
+.comment-block {
+	padding: 0 1rem;
+}

@@ -2,16 +2,18 @@ import "./CommentCard.scss";
 
 function CommentCard({ comments }) {
 	return (
-		<section className="commentsList">
+		<section className="comments-list">
 			{comments.map((comment) => (
-				<div className="commentItem" key={comment.id}>
-					<div className="commentItem__img"></div>
-					<div className="commentItem__infoWrap">
-						<div className="commentsItem__info">
-							<span className="commentItem__name">{comment.name}</span>
-							<span className="commentItem__date">{comment.timestamp}</span>
+				<div className="comment-item" key={comment.id}>
+					<div className="comment-item__img"></div>
+					<div className="comment-item__info-wrap">
+						<div className="comment-item__info">
+							<span className="comment-item__name">{comment.name}</span>
+							<span className="comment-item__date">
+								{new Date(comment.timestamp).toLocaleDateString()}
+							</span>
 						</div>
-						<p className="commentItem__userComment">{comment.comment}</p>
+						<p className="comment-item__user-comment">{comment.comment}</p>
 					</div>
 				</div>
 			))}

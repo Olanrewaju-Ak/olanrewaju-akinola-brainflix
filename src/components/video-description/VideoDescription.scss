@@ -19,6 +19,7 @@
 		&__misc {
 			@include flex-row-space-btw;
 			border-bottom: 1px solid color.$secondary-semi-light;
+			justify-content: space-between;
 		}
 
 		&__origin {
@@ -42,6 +43,10 @@
 
 		&__description {
 			@include text-body__mobile;
+		}
+
+		&__commentsTotal {
+			@include text-body__mobile--bold;
 		}
 	}
 

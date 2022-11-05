@@ -4,26 +4,30 @@ import AddCommentIcon from "../../assets/icons/add_comment.svg";
 
 const CommentForm = () => {
 	return (
-		<section className="commentsForm">
-			<div className="commentForm-layout">
+		<section className="comment-form">
+			<div className="comment-form__layout">
 				<div className="user-avatar"></div>
-				<form action="" id="commentForm" className="form">
+				<form action="" id="comment-form" className="form">
 					<div className="form__div">
 						<label htmlFor="comment" className="form-field__label">
-							Join the Conversation
+							JOIN THE CONVERSATION
 						</label>
 						<textarea
 							className="form-field__input"
-							name="userComment"
+							name="user-comment"
 							id="comment"
-							cols="30"
-							rows="10"
+							cols="40"
+							rows="5"
 							placeholder="Add a new comment"
 						></textarea>
 					</div>
 					<div className="btn-container">
 						<button className="btn">
-							<img src={AddCommentIcon} alt="add-comment icon" />
+							<img
+								src={AddCommentIcon}
+								alt="add-comment icon"
+								className="icon__add-comment"
+							/>
 							COMMENT
 						</button>
 					</div>

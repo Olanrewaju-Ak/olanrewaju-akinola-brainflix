@@ -3,7 +3,7 @@ import "./CommentBlock.scss";
 // import CommentCard from "../comment-card/CommentCard";
 
 const CommentBlock = ({ children }) => {
-	return <section className="commentBlock">{children}</section>;
+	return <section className="comment-block">{children}</section>;
 };
 
 export default CommentBlock;

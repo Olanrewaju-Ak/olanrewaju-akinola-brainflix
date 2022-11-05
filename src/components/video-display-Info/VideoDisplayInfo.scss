@@ -3,7 +3,7 @@
 @use "../../styles/partials/breakpoints" as breakpoint;
 
 @include breakpoint.small {
-	.videoInfo {
+	.video-info {
 		width: 100vw;
 		background-color: color.$primary-light;
 		padding: 0 1rem;
