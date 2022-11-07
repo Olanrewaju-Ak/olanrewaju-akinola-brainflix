@@ -90,3 +90,31 @@
 	@include text-body__mobile();
 	color: color.$primary-semi-light;
 }
+
+// Text-Tablet/Desktop
+@mixin text-header__tablet {
+	@include text-header();
+	font-size: 2.0625rem;
+	line-height: 2.75rem;
+}
+@mixin text-header__tablet--light {
+	@include text-header--light();
+	font-size: 2.0625rem;
+	line-height: 2.75rem;
+}
+
+@mixin text-body__tablet {
+	@include text-body();
+	line-height: 1.375rem;
+	font-size: 0.875rem;
+	color: color.$primary-dark;
+}
+
+@mixin text-body__tablet--bold {
+	@include text-body__tablet();
+	font-weight: 700;
+}
+@mixin text-body__tablet--light {
+	@include text-body__tablet();
+	color: color.$primary-semi-light;
+}

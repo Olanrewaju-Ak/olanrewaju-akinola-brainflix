@@ -33,14 +33,13 @@
 
 		&__form {
 			width: 85%;
-			background: color.$secondary-semi-light;
 			@include border-default;
 			border-radius: 0.25rem;
 			position: relative;
-			// padding: 0.25rem;
-			// padding: 0.0625rem 0.25rem;
 
 			&-input {
+				background-color: color.$secondary-light;
+				border-radius: 0.25rem;
 				display: inline-block;
 				border: none;
 				height: 100%;
@@ -48,15 +47,21 @@
 				padding: 0.5rem 1.75rem;
 				font-family: "avenir";
 				font-size: 0.875rem;
+				outline: none;
 
 				&::placeholder {
 					color: color.$primary-dark;
+				}
+
+				&:focus {
+					outline: 1px solid color.$primary-accent;
 				}
 			}
 		}
 
 		&__avatar {
 			background: url("../../assets/Images/Mohan-muruge.jpg") no-repeat center/cover;
+			background-color: color.$secondary-semi-light;
 			width: 2.25rem;
 			height: 2.25rem;
 			border-radius: 50%;
@@ -93,6 +98,7 @@
 		&__search-img {
 			width: 1rem;
 			height: 1rem;
+			color: color.$primary-light;
 		}
 
 		&__upload {
@@ -104,17 +110,18 @@
 	}
 }
 
-// Header For Tablet
+/* Header For Tablet */
 
 @include breakpoint.medium {
 	.header__container {
 		width: 100%;
-		padding: 2rem;
+		padding: 0 2rem;
 	}
 	.navigation {
 		width: 100%;
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 
 		// gap: 4%;
 
@@ -123,10 +130,11 @@
 		}
 
 		&__wrapper {
-			width: 80%;
+			width: 90%;
 			display: flex;
-			justify-content: space-evenly;
+			justify-content: flex-end;
 			align-items: center;
+			gap: 5%;
 
 			&-search {
 				width: 40%;
@@ -140,15 +148,15 @@
 		}
 
 		&__form {
-			width: 85%;
-			background: color.$secondary-semi-light;
+			width: 100%;
 			@include border-default;
 			border-radius: 0.25rem;
 			position: relative;
-			// padding: 0.25rem;
-			// padding: 0.0625rem 0.25rem;
 
 			&-input {
+				background-color: color.$secondary-light;
+				border-radius: 0.25rem;
+				@include border-default;
 				display: inline-block;
 				border: none;
 				height: 100%;
@@ -156,17 +164,23 @@
 				padding: 0.5rem 1.75rem;
 				font-family: "avenir";
 				font-size: 0.875rem;
+				height: 2.5rem;
 
 				&::placeholder {
 					color: color.$primary-dark;
+				}
+
+				&:focus {
+					outline: 1px solid color.$primary-accent;
 				}
 			}
 		}
 
 		&__avatar {
 			background: url(../../assets/Images/Mohan-muruge.jpg) no-repeat center/cover;
-			width: 2.25rem;
-			height: 2.25rem;
+			background-color: color.$secondary-semi-light;
+			width: 2.5rem;
+			height: 2.5rem;
 			border-radius: 50%;
 
 			&--mobile {
@@ -177,7 +191,117 @@
 
 	.btn {
 		@include btn-accent;
-		width: 30%;
+		width: 25%;
+		position: relative;
+		font-size: 0.75rem;
+	}
+
+	.icon {
+		background-color: none;
+		width: 1rem;
+		height: 1rem;
+
+		&__btn {
+			padding: 0;
+			width: 1rem;
+			height: 1rem;
+			background-color: color.$primary-light;
+			border: none;
+			position: absolute;
+			top: 25%;
+			left: 0.5rem;
+		}
+
+		&__search-img {
+			width: 1rem;
+			height: 1rem;
+		}
+
+		&__upload {
+			position: absolute;
+			top: 25%;
+			left: 0.5rem;
+			height: 1.2rem;
+		}
+	}
+}
+
+/* Header For Desktop */
+
+@include breakpoint.large {
+	.header__container {
+		width: 100%;
+		padding: 0 8rem;
+	}
+	.navigation {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		// gap: 4%;
+
+		&--tablet {
+			display: none;
+		}
+
+		&__wrapper {
+			width: 90%;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			gap: 5%;
+
+			&-search {
+				width: 40%;
+				@include flex-row;
+				margin: 1rem 0;
+			}
+		}
+
+		&__logo-link {
+			margin: 0;
+		}
+
+		&__form {
+			width: 100%;
+			background: color.$secondary-semi-light;
+			@include border-default;
+			border-radius: 0.25rem;
+			position: relative;
+
+			&-input {
+				display: inline-block;
+				border: none;
+				height: 100%;
+				width: 100%;
+				padding: 0.5rem 1.75rem;
+				font-family: "avenir";
+				font-size: 0.875rem;
+				height: 2.5rem;
+
+				&::placeholder {
+					color: color.$primary-dark;
+				}
+			}
+		}
+
+		&__avatar {
+			background: url(../../assets/Images/Mohan-muruge.jpg) no-repeat center/cover;
+			background-color: color.$secondary-semi-light;
+			width: 2.5rem;
+			height: 2.5rem;
+			border-radius: 50%;
+
+			&--mobile {
+				display: none;
+			}
+		}
+	}
+
+	.btn {
+		@include btn-accent;
+		width: 25%;
 		position: relative;
 		font-size: 0.75rem;
 	}

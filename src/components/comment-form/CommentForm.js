@@ -16,13 +16,12 @@ const CommentForm = () => {
 							className="form-field__input"
 							name="user-comment"
 							id="comment"
-							cols="40"
-							rows="5"
 							placeholder="Add a new comment"
 						></textarea>
 					</div>
 					<div className="btn-container">
-						<button className="btn">
+						{/* <div className="btn-container__tablet-hidden"></div> */}
+						<button className="btn btn__form">
 							<img
 								src={AddCommentIcon}
 								alt="add-comment icon"

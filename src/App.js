@@ -29,16 +29,22 @@ const App = () => {
 		<>
 			<Header />
 			<VideoDisplay videoDetails={videoDescription} />
-			<VideoDisplayInfo>
-				<VideoDescription videoDetails={videoDescription} />
-			</VideoDisplayInfo>
-			<CommentBlock>
-				<CommentForm />
-				<CommentCard comments={videoDescription.comments} />
-			</CommentBlock>
-			<NextVideo>
-				<VideoCard videos={videos} onClick={handleClick} />
-			</NextVideo>
+			<div className="app-content">
+				<div className="app-content__left">
+					<VideoDisplayInfo>
+						<VideoDescription videoDetails={videoDescription} />
+					</VideoDisplayInfo>
+					<CommentBlock>
+						<CommentForm />
+						<CommentCard comments={videoDescription.comments} />
+					</CommentBlock>
+				</div>
+				<div className="app-content__right">
+					<NextVideo>
+						<VideoCard videos={videos} onClick={handleClick} />
+					</NextVideo>
+				</div>
+			</div>
 		</>
 	);
 };

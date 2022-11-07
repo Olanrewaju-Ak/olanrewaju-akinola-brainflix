@@ -2,6 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/breakpoints" as breakpoint;
 
+/*  MOBILE  */
 @include breakpoint.small {
 	.comment {
 		&-form {
@@ -46,7 +47,7 @@
 			}
 
 			&:focus {
-				outline: 1px solid color.$primary-dark;
+				outline: 1px solid color.$primary-accent;
 			}
 		}
 		&-field__label {
@@ -60,6 +61,189 @@
 		width: 100%;
 		position: relative;
 		font-size: 0.75rem;
+	}
+
+	.icon__add-comment {
+		position: absolute;
+		width: 1rem;
+		height: 1rem;
+		top: 25%;
+		left: 0.5rem;
+		height: 1.2rem;
+	}
+}
+
+/*  TABLET  */
+@include breakpoint.medium {
+	.comment {
+		&-form {
+			&__layout {
+				width: 100%;
+				display: flex;
+				justify-content: flex-start;
+				border-bottom: 1px solid color.$secondary-semi-light;
+				gap: 4%;
+			}
+		}
+	}
+
+	.user-avatar {
+		background: url(../../assets/Images/Mohan-muruge.jpg) center/cover;
+		height: 2.5rem;
+		width: 2.5rem;
+		border-radius: 50%;
+		margin-top: 1.3rem;
+		margin-right: 0.0625rem;
+	}
+
+	.form {
+		@include flex-row;
+		justify-content: space-between;
+		align-items: center;
+		width: 80%;
+		padding-bottom: 1rem;
+
+		&__div {
+			width: 75%;
+			// display: flex;
+			// flex-direction: column;
+			// align-items: flex-start;
+			// justify-content: center;
+		}
+
+		&-field__input {
+			background-color: color.$secondary-light;
+			@include text-body__tablet;
+			@include border-default;
+			height: 2.5rem;
+			width: 100%;
+			border-radius: 0.25rem;
+			padding: 0.5rem;
+			margin-bottom: 1rem;
+			overflow: hidden;
+
+			&::placeholder {
+				font-family: "avenir";
+				font-size: 0.875rem;
+				color: color.$primary-dark;
+			}
+
+			&:focus {
+				outline: 1px solid color.$primary-accent;
+			}
+		}
+		&-field__label {
+			@include text-body__tablet--light;
+			font-weight: 700;
+		}
+	}
+
+	.btn {
+		&-container {
+			width: 20%;
+			// display: flex;
+			// flex-direction: column;
+			// align-items: flex-start;
+			// justify-content: center;
+		}
+
+		&__form {
+			// display: inline-block;
+			@include btn-accent;
+			width: 9.375rem;
+			position: relative;
+			font-size: 0.75rem;
+		}
+	}
+
+	.icon__add-comment {
+		position: absolute;
+		width: 1rem;
+		height: 1rem;
+		top: 25%;
+		left: 0.5rem;
+		height: 1.2rem;
+	}
+}
+
+/*  DESKTOP */
+@include breakpoint.large {
+	.comment {
+		&-form {
+			&__layout {
+				width: 100%;
+				display: flex;
+				justify-content: flex-start;
+				border-bottom: none;
+				gap: 4%;
+				padding-right: 1.5rem;
+			}
+		}
+	}
+
+	.user-avatar {
+		background: url(../../assets/Images/Mohan-muruge.jpg) center/cover;
+		height: 2.5rem;
+		width: 2.5rem;
+		border-radius: 50%;
+		margin-top: 1.3rem;
+		margin-right: 0.0625rem;
+	}
+
+	.form {
+		@include flex-row;
+		justify-content: space-between;
+		align-items: center;
+		width: 83%;
+		padding-bottom: 1rem;
+
+		&__div {
+			width: 75%;
+		}
+
+		&-field__input {
+			background-color: color.$secondary-light;
+			@include text-body__tablet;
+			@include border-default;
+			height: 2.5rem;
+			width: 100%;
+			border-radius: 0.25rem;
+			padding: 0.5rem;
+			margin-bottom: 1rem;
+			overflow: hidden;
+
+			&::placeholder {
+				font-family: "avenir";
+				font-size: 0.875rem;
+				color: color.$primary-dark;
+			}
+
+			&:focus {
+				outline: 1px solid color.$primary-accent;
+			}
+		}
+		&-field__label {
+			@include text-body__tablet--light;
+			font-weight: 700;
+		}
+	}
+
+	.btn {
+		&-container {
+			width: 20%;
+			// display: flex;
+			// flex-direction: column;
+			// align-items: flex-start;
+			// justify-content: center;
+		}
+
+		&__form {
+			// display: inline-block;
+			@include btn-accent;
+			width: 9.375rem;
+			position: relative;
+			font-size: 0.75rem;
+		}
 	}
 
 	.icon__add-comment {

@@ -2,6 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/breakpoints" as breakpoint;
 
+/*  MOBILE  */
 @include breakpoint.small {
 	.videoInfo {
 		&__title {
@@ -16,10 +17,14 @@
 			}
 		}
 
-		&__misc {
+		&__misc--mobile {
 			@include flex-row-space-btw;
 			border-bottom: 1px solid color.$secondary-semi-light;
 			justify-content: space-between;
+		}
+
+		&__misc--tablet {
+			display: none;
 		}
 
 		&__origin {
@@ -68,6 +73,176 @@
 		&__text {
 			@include text-body__mobile--light;
 			margin-left: 0.5rem;
+		}
+	}
+}
+
+/*  TABLET  */
+@include breakpoint.medium {
+	.videoInfo {
+		width: 100%;
+
+		&__title {
+			width: 100%;
+			border-bottom: 1px solid color.$secondary-semi-light;
+			padding-bottom: 0.5rem;
+
+			&-text {
+				@include text-header__tablet;
+				text-align: left;
+				margin: 0;
+				padding: 2rem 0 1rem;
+			}
+		}
+
+		&__misc--mobile {
+			display: none;
+		}
+		&__misc--tablet {
+			width: 100%;
+			@include flex-row-space-btw;
+			justify-content: space-between;
+		}
+
+		&__origin {
+			width: 30%;
+			@include flex-row;
+			justify-content: flex-start;
+			gap: 15%;
+			align-items: center;
+
+			&-text {
+				@include text-body__tablet--bold;
+				margin: 0;
+
+				&--light {
+					@include text-body__tablet--light;
+					margin: 0;
+				}
+			}
+		}
+
+		&__icons {
+			width: 30%;
+			@include flex-row;
+			justify-content: flex-end;
+			gap: 15%;
+			align-items: center;
+		}
+
+		&__description {
+			@include text-body__tablet;
+		}
+
+		&__commentsTotal {
+			@include text-body__tablet--bold;
+		}
+	}
+
+	.viewsIcon {
+		width: 100%;
+		@include flex-row;
+		justify-content: flex-start;
+
+		&__text {
+			@include text-body__tablet--light;
+			margin: 0 0 0 0.5rem;
+		}
+	}
+	.likesIcon {
+		width: 100%;
+		@include flex-row-space-btw;
+		justify-content: flex-start;
+
+		&__text {
+			@include text-body__tablet--light;
+			margin: 0 0 0 0.5rem;
+		}
+	}
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
+	.videoInfo {
+		width: 100%;
+
+		&__title {
+			width: 100%;
+			border-bottom: 1px solid color.$secondary-semi-light;
+			padding-bottom: 0.5rem;
+
+			&-text {
+				@include text-header__tablet;
+				text-align: left;
+				margin: 0;
+				padding: 2rem 0 1rem;
+			}
+		}
+
+		&__misc--mobile {
+			display: none;
+		}
+		&__misc--tablet {
+			width: 100%;
+			@include flex-row-space-btw;
+			justify-content: space-between;
+			padding-right: 1.5rem;
+		}
+
+		&__origin {
+			width: 30%;
+			@include flex-row;
+			justify-content: flex-start;
+			gap: 15%;
+			align-items: center;
+
+			&-text {
+				@include text-body__tablet--bold;
+				margin: 0;
+
+				&--light {
+					@include text-body__tablet--light;
+					margin: 0;
+				}
+			}
+		}
+
+		&__icons {
+			width: 30%;
+			@include flex-row;
+			justify-content: flex-end;
+			gap: 15%;
+			align-items: center;
+		}
+
+		&__description {
+			@include text-body__tablet;
+			padding-right: 1.5rem;
+		}
+
+		&__commentsTotal {
+			@include text-body__tablet--bold;
+		}
+	}
+
+	.viewsIcon {
+		width: 100%;
+		@include flex-row;
+		justify-content: flex-start;
+
+		&__text {
+			@include text-body__tablet--light;
+			margin: 0 0 0 0.5rem;
+		}
+	}
+	.likesIcon {
+		width: 100%;
+		@include flex-row-space-btw;
+		justify-content: flex-start;
+
+		&__text {
+			@include text-body__tablet--light;
+			margin: 0 0 0 0.5rem;
 		}
 	}
 }

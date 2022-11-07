@@ -10,8 +10,26 @@ const VideoDescription = ({ videoDetails }) => {
 		<>
 			<div className="videoInfo__title">
 				<h1 className="videoInfo__title-text">{videoDetails.title}</h1>
+				<div className="videoInfo__misc--tablet">
+					<div className="videoInfo__origin">
+						<p className="videoInfo__origin-text">By {videoDetails.channel}</p>
+						<p className="videoInfo__origin-text--light">
+							{new Date(videoDetails.timestamp).toLocaleDateString()}
+						</p>
+					</div>
+					<div className="videoInfo__icons">
+						<div className="viewsIcon">
+							<img className="viewsIcon__img" src={ViewsIcon} alt="views-icon" />
+							<p className="viewsIcon__text">{videoDetails.views}</p>
+						</div>
+						<div className="likesIcon">
+							<img className="likesIcon__img" src={LikesIcon} alt="likes-icon" />
+							<p className="likesIcon__text">{videoDetails.likes}</p>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div className="videoInfo__misc">
+			<div className="videoInfo__misc--mobile">
 				<div className="videoInfo__origin">
 					<p className="videoInfo__origin-text">By {videoDetails.channel}</p>
 					<p className="videoInfo__origin-text--light">
