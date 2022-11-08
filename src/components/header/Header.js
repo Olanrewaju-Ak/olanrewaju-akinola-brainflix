@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.scss";
-import LogoImage from "../../assets/Logo/BrainFlix-logo.svg";
+import LogoImage from "../../assets/logo/BrainFlix-logo.svg";
 import SearchIcon from "../../assets/icons/search.svg";
 import UploadIcon from "../../assets/icons/upload.svg";
 
