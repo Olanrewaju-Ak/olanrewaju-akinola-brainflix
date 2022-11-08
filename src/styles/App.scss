@@ -1,0 +1,26 @@
+@use "./partials/fonts" as *;
+@use "./partials/reset" as *;
+@use "./partials/mixins" as *;
+@use "./partials/breakpoints" as breakpoint;
+
+/*DESKTOP*/
+
+@include breakpoint.large {
+	.app-content {
+		max-width: breakpoint.$desktop-min-width;
+		@include flex-row-space-btw;
+		align-items: unset;
+		padding: 0 8rem;
+		margin: 0 auto;
+
+		&__left {
+			width: 65%;
+			height: 100%;
+		}
+
+		&__right {
+			width: 35%;
+			height: 100%;
+		}
+	}
+}

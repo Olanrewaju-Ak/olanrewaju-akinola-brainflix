@@ -1,0 +1,21 @@
+ 1. App Component
+
+    2. Header Component
+        - logo
+        - search + userprofile
+        - upload component
+
+    3. VideoDisplay Component
+
+    4  videoDisplayInfo component
+        a. videoDescription component
+            - videoTitle
+            - videoinfo + likes
+            - video description
+        b. comments component
+            b1. -form component
+            b2. -comments display component
+                    b2.1-commentcard component
+        
+    5. nextVideos component
+        a. videoCard component -- done.
