@@ -1,0 +1,122 @@
+@use "../../styles/partials/colors" as color;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as breakpoint;
+
+/*  MOBILE */
+@include breakpoint.small {
+	.comment-item {
+		border-bottom: 1px solid color.$secondary-semi-light;
+		padding: 1rem 0 0.5rem;
+		@include flex-row-space-btw;
+		align-items: flex-start;
+		gap: 5%;
+
+		&__img {
+			width: 2.25rem;
+			height: 2.25rem;
+			border-radius: 50%;
+			background-color: color.$secondary-semi-light;
+		}
+		&__info-wrap {
+			width: 75%;
+		}
+
+		&__info {
+			@include flex-row-space-btw;
+			justify-content: space-between;
+		}
+
+		&__name {
+			@include text-body__mobile--bold;
+		}
+
+		&__date {
+			@include text-body__mobile--light;
+		}
+		&__user-comment {
+			@include text-body__mobile;
+			margin: 0;
+			padding: 0.5rem 0;
+		}
+	}
+}
+
+/*  TABLET  */
+@include breakpoint.medium {
+	.comment-item {
+		border-bottom: 1px solid color.$secondary-semi-light;
+		padding: 1.5rem 0 1rem;
+		@include flex-row-space-btw;
+		align-items: flex-start;
+		gap: 4%;
+
+		&__img {
+			width: 2.5rem;
+			height: 2.5rem;
+			border-radius: 50%;
+			background-color: color.$secondary-semi-light;
+		}
+		&__info-wrap {
+			width: 85%;
+		}
+
+		&__info {
+			@include flex-row-space-btw;
+			justify-content: space-between;
+		}
+
+		&__name {
+			@include text-body__tablet--bold;
+		}
+
+		&__date {
+			@include text-body__tablet--light;
+		}
+		&__user-comment {
+			@include text-body__tablet;
+			margin: 0;
+			padding: 0.5rem 0;
+		}
+	}
+}
+
+/*  DESKTOP */
+@include breakpoint.large {
+	.comment-item {
+		border-top: 1px solid color.$secondary-semi-light;
+		border-bottom: none;
+		padding: 1.5rem 0 1rem;
+		@include flex-row-space-btw;
+		align-items: flex-start;
+		gap: 4%;
+
+		&__img {
+			width: 2.5rem;
+			height: 2.5rem;
+			border-radius: 50%;
+			background-color: color.$secondary-semi-light;
+		}
+		&__info-wrap {
+			width: 88%;
+			padding-right: 0.5rem;
+		}
+
+		&__info {
+			@include flex-row-space-btw;
+			justify-content: space-between;
+		}
+
+		&__name {
+			@include text-body__tablet--bold;
+		}
+
+		&__date {
+			@include text-body__tablet--light;
+		}
+		&__user-comment {
+			@include text-body__tablet;
+			margin: 0;
+			padding: 0.5rem 0;
+		}
+	}
+}
