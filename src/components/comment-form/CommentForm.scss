@@ -105,10 +105,6 @@
 
 		&__div {
 			width: 75%;
-			// display: flex;
-			// flex-direction: column;
-			// align-items: flex-start;
-			// justify-content: center;
 		}
 
 		&-field__input {
@@ -141,14 +137,9 @@
 	.btn {
 		&-container {
 			width: 20%;
-			// display: flex;
-			// flex-direction: column;
-			// align-items: flex-start;
-			// justify-content: center;
 		}
 
 		&__form {
-			// display: inline-block;
 			@include btn-accent;
 			width: 9.375rem;
 			position: relative;
@@ -231,14 +222,9 @@
 	.btn {
 		&-container {
 			width: 20%;
-			// display: flex;
-			// flex-direction: column;
-			// align-items: flex-start;
-			// justify-content: center;
 		}
 
 		&__form {
-			// display: inline-block;
 			@include btn-accent;
 			width: 9.375rem;
 			position: relative;

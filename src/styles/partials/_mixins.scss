@@ -41,6 +41,11 @@
 @mixin btn-accent {
 	@include btn();
 	background-color: color.$primary-accent;
+
+	&:hover {
+		background-color: color.$secondary-accent-dark;
+		color: #ffffff;
+	}
 }
 
 // TEXTS

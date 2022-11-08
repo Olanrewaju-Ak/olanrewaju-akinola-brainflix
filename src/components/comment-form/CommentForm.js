@@ -20,7 +20,6 @@ const CommentForm = () => {
 						></textarea>
 					</div>
 					<div className="btn-container">
-						{/* <div className="btn-container__tablet-hidden"></div> */}
 						<button className="btn btn__form">
 							<img
 								src={AddCommentIcon}
