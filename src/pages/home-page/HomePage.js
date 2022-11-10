@@ -22,7 +22,7 @@ const HomePage = () => {
 	const [videoDescription, setVideoDescription] = useState([]);
 
 	useEffect(() => {
-		console.log("useEffect ran");
+		// console.log("useEffect ran");
 		const fetchVideos = async () => {
 			try {
 				const { data } = await axios.get(`${URL}${API_KEY}`);

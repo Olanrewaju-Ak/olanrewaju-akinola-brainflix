@@ -1,0 +1,115 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as color;
+@use "../../styles/partials/breakpoints" as breakpoint;
+
+/*  MOBILE  */
+@include breakpoint.small {
+	.upload-page {
+		padding: 0 1rem;
+		border-top: 1px solid color.$secondary-semi-light;
+
+		&__title {
+			@include text-header__mobile;
+		}
+	}
+
+	.upload-form {
+		width: 100%;
+		padding-bottom: 1rem;
+
+		&__layout {
+			// @include flex-row-space-btw;
+			// align-items: flex-start;
+			border-bottom: 1px solid color.$secondary-semi-light;
+			// gap: 5%;
+		}
+
+		&__thumbnail {
+			width: 100%;
+
+			&-title {
+				@include text-body__mobile--light;
+				font-weight: 700;
+			}
+
+			&-img {
+				height: 35vh;
+				width: 100%;
+				object-fit: fill;
+				border-radius: 0.25rem;
+			}
+		}
+
+		&__input {
+			background-color: color.$secondary-light;
+			@include text-body__mobile;
+			@include border-default;
+			height: 2.5rem;
+			width: 100%;
+			border-radius: 0.25rem;
+			padding: 0.75rem;
+			margin-bottom: 1rem;
+			overflow: hidden;
+
+			&::placeholder {
+				font-family: "avenir";
+				font-size: 0.875rem;
+				color: color.$primary-dark;
+			}
+
+			&:focus {
+				outline: 1px solid color.$primary-accent;
+			}
+
+			&--long {
+				height: 5rem;
+				width: 100%;
+				background-color: color.$secondary-light;
+				@include text-body__mobile;
+				@include border-default;
+				border-radius: 0.25rem;
+				padding: 0.75rem;
+				margin-bottom: 1rem;
+				overflow: hidden;
+
+				&::placeholder {
+					font-family: "avenir";
+					font-size: 0.875rem;
+					color: color.$primary-dark;
+				}
+
+				&:focus {
+					outline: 1px solid color.$primary-accent;
+				}
+			}
+		}
+
+		&__label {
+			@include text-body__mobile--light;
+			font-weight: 700;
+		}
+	}
+
+	.btn {
+		@include btn-accent;
+		width: 100%;
+		position: relative;
+		font-size: 0.75rem;
+		margin-bottom: 1rem;
+
+		&--borderless {
+			@include btn--plain;
+			width: 100%;
+		}
+	}
+
+	.icon__upload {
+		position: absolute;
+		width: 1rem;
+		height: 1rem;
+		top: 25%;
+		left: 0.5rem;
+		height: 1.2rem;
+	}
+}

@@ -4,15 +4,19 @@ import UploadImage from "../../assets/images/Upload-video-preview.jpg";
 
 const UploadPage = () => {
 	return (
-		<>
-			<h1>Upload Video</h1>
+		<section className="upload-page">
+			<h1 className="upload-page__title">Upload Video</h1>
 			<form action="" className="upload-form">
-				<div>
-					<div className="upload-form__video-thumbnail">
-						<p>VIDEO THUMBNAIL</p>
-						<img src={UploadImage} alt="video-thumbnail" />
+				<div className="upload-form__layout">
+					<div className="upload-form__thumbnail">
+						<p className="upload-form__thumbnail-title">VIDEO THUMBNAIL</p>
+						<img
+							src={UploadImage}
+							alt="video-thumbnail"
+							className="upload-form__thumbnail-img"
+						/>
 					</div>
-					<div className="upload-form__input-sections">
+					<div className="upload-form__sections">
 						<div className="upload-form__div">
 							<label htmlFor="comment" className="upload-form__label">
 								TITLE YOUR VIDEO
@@ -29,7 +33,7 @@ const UploadPage = () => {
 								JOIN THE CONVERSATION
 							</label>
 							<textarea
-								className="upload-form__input"
+								className="upload-form__input--long"
 								name="user-comment"
 								id="comment"
 								placeholder="Add a description to your video"
@@ -38,18 +42,14 @@ const UploadPage = () => {
 					</div>
 				</div>
 				<div className="buttons">
-					<button className="btn btn__form">
-						<img
-							src={UploadIcon}
-							alt="add-comment icon"
-							className="icon__add-comment"
-						/>
+					<button className="btn ">
+						<img src={UploadIcon} alt="upload icon" className="icon__upload" />
 						PUBLISH
 					</button>
-					<button className="btn btn__form--borderless">CANCEL</button>
+					<button className=" btn--borderless">CANCEL</button>
 				</div>
 			</form>
-		</>
+		</section>
 	);
 };
 
