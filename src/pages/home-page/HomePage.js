@@ -29,6 +29,7 @@ const HomePage = () => {
 				const detailResponse = await axios.get(
 					`https://project-2-api.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8/?api_key=${API_KEY}`,
 				);
+
 				// console.log(data);
 				const videoFilter = getVideos(videoId, data);
 				setVideos(videoFilter, data);

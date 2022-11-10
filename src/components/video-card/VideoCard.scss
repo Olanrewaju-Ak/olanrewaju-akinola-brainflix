@@ -50,6 +50,10 @@
 			}
 		}
 	}
+
+	.video__link {
+		text-decoration: none;
+	}
 }
 
 /* TABLET */
@@ -100,6 +104,9 @@
 			}
 		}
 	}
+	.video__link {
+		text-decoration: none;
+	}
 }
 
 /* DESKTOP */
@@ -149,5 +156,8 @@
 				margin-top: 0.25rem;
 			}
 		}
+	}
+	.video__link {
+		text-decoration: none;
 	}
 }
