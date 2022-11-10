@@ -5,6 +5,7 @@ import LikesIcon from "../../assets/icons/likes.svg";
 const VideoDescription = ({ videoDetails }) => {
 	const { title, channel, image, description, views, likes, timestamp, comment, ...rest } =
 		videoDetails;
+	console.log(videoDetails);
 
 	return (
 		<>
@@ -50,8 +51,8 @@ const VideoDescription = ({ videoDetails }) => {
 			<div className="videoInfo__description">
 				<p className="videoInfo__descriptionText">{videoDetails.description}</p>
 			</div>
-			{videoDetails.comments.length > 0 ? (
-				<p className="videoInfo__commentsTotal">{videoDetails.comments.length} Comments</p>
+			{videoDetails.comments?.length > 0 ? (
+				<p className="videoInfo__commentsTotal">{videoDetails.comments?.length} Comments</p>
 			) : (
 				<p className="videoInfo__commentsTotal">No Comments</p>
 			)}

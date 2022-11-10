@@ -1,17 +1,12 @@
 import "./VideoCard.scss";
 import React from "react";
+import { Link } from "react-router-dom";
 
-const VideoCard = ({ videos, onClick }) => {
+const VideoCard = ({ videos }) => {
 	return (
 		<>
 			{videos.map((video) => (
-				<section
-					className="video-card"
-					key={video.id}
-					onClick={(clickEvent) => {
-						onClick(clickEvent, video.id);
-					}}
-				>
+				<section className="video-card" key={video.id}>
 					<div className="video-card__poster">
 						<img
 							className="video-card__poster-image"
