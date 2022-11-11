@@ -11,51 +11,70 @@ import CommentForm from "../../components/comment-form/CommentForm";
 import CommentCard from "../../components/comment-card/CommentCard";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { getVideos } from "../../utility/utility.js";
+// import { getVideos } from "../../utility/utility.js";
 
-const URL = "https://project-2-api.herokuapp.com/videos?api_key=";
-const API_KEY = "4baecaa9-4473-40d5-82a1-fe4fe0bf846d";
+const URL = "https://project-2-api.herokuapp.com/videos/";
+const API_KEY = "?api_key=4baecaa9-4473-40d5-82a1-fe4fe0bf846d";
 
 const HomePage = () => {
 	const [videoId, setVideoId] = useState("84e96018-4022-434e-80bf-000ce4cd12b8");
 	const [videos, setVideos] = useState([]);
-	const [videoDescription, setVideoDescription] = useState([]);
+	const [selectedVideo, setSelectedVideo] = useState({});
+
+	const getAllVideos = async (videoId) => {
+		const { data } = await axios.get(`${URL}${API_KEY}`);
+		// console.log(data);
+		const dataFilter = data.filter((video) => video.id !== videoId);
+		console.log(dataFilter);
+		setVideos(dataFilter);
+	};
+
+	const getSelectedVideo = async (videoId) => {
+		const { data } = await axios.get(`${URL}${videoId}${API_KEY}`);
+		console.log(data);
+		setSelectedVideo(data);
+	};
 
 	useEffect(() => {
 		// console.log("useEffect ran");
-		const fetchVideos = async () => {
-			try {
-				const { data } = await axios.get(`${URL}${API_KEY}`);
-				const detailResponse = await axios.get(
-					`https://project-2-api.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8/?api_key=${API_KEY}`,
-				);
-
-				// console.log(data);
-				const videoFilter = getVideos(videoId, data);
-				setVideos(videoFilter, data);
-				setVideoId(detailResponse.data.id);
-				setVideoDescription(detailResponse.data);
-			} catch (error) {
-				console.log("Error", error);
-			}
-		};
-		fetchVideos();
+		try {
+			getAllVideos(videoId);
+			getSelectedVideo(videoId);
+		} catch (error) {
+			console.log("Error:", error);
+		}
 	}, []);
 
 	const params = useParams();
-	console.log(params);
+	// console.log(params);
+
+	useEffect(() => {
+		console.log("params useeffect");
+		if (Object.keys(params).length !== 0) {
+			try {
+				getAllVideos(params.videoId);
+				getSelectedVideo(params.videoId);
+				// console.log("Second useEffect ran", getSelectedVideo(params.videoId));
+				setVideoId(params.videoId);
+			} catch (error) {
+				console.log("Error:", error);
+			}
+		}
+	}, [params]);
+
+	// console.log(selectedVideo);
 
 	return (
 		<>
-			<VideoDisplay videoDetails={videoDescription} />
+			{selectedVideo && <VideoDisplay videoDetails={selectedVideo} />}
 			<div className="app-content">
 				<div className="app-content__left">
 					<VideoDisplayInfo>
-						<VideoDescription videoDetails={videoDescription} />
+						{selectedVideo && <VideoDescription videoDetails={selectedVideo} />}
 					</VideoDisplayInfo>
 					<CommentBlock>
 						<CommentForm />
-						<CommentCard comments={videoDescription.comments} />
+						{selectedVideo && <CommentCard comments={selectedVideo.comments} />}
 					</CommentBlock>
 				</div>
 				<div className="app-content__right">

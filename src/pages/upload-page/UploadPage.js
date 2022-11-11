@@ -30,7 +30,7 @@ const UploadPage = () => {
 						</div>
 						<div className="upload-form__div">
 							<label htmlFor="comment" className="upload-form__label">
-								JOIN THE CONVERSATION
+								ADD A VIDEO DESCRIPTION
 							</label>
 							<textarea
 								className="upload-form__input--long"
@@ -42,11 +42,11 @@ const UploadPage = () => {
 					</div>
 				</div>
 				<div className="buttons">
-					<button className="btn ">
+					<button className="btn__upload ">
 						<img src={UploadIcon} alt="upload icon" className="icon__upload" />
 						PUBLISH
 					</button>
-					<button className=" btn--borderless">CANCEL</button>
+					<button className=" btn__upload--borderless">CANCEL</button>
 				</div>
 			</form>
 		</section>
