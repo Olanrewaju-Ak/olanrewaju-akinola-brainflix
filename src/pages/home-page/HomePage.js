@@ -11,7 +11,6 @@ import CommentForm from "../../components/comment-form/CommentForm";
 import CommentCard from "../../components/comment-card/CommentCard";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-// import { getVideos } from "../../utility/utility.js";
 
 const URL = "https://project-2-api.herokuapp.com/videos/";
 const API_KEY = "?api_key=4baecaa9-4473-40d5-82a1-fe4fe0bf846d";
@@ -25,23 +24,62 @@ const HomePage = () => {
 		const { data } = await axios.get(`${URL}${API_KEY}`);
 		// console.log(data);
 		const dataFilter = data.filter((video) => video.id !== videoId);
-		console.log(dataFilter);
+		// console.log(dataFilter);
 		setVideos(dataFilter);
 	};
 
 	const getSelectedVideo = async (videoId) => {
 		const { data } = await axios.get(`${URL}${videoId}${API_KEY}`);
-		console.log(data);
+		// console.log(data);
 		setSelectedVideo(data);
 	};
 
+	// Adding a user Comment event Listener
+	const [formValue, changeFormValue] = useState("");
+
+	const commentObj = {
+		comment: formValue
+	};
+
+	const clearError = (form, formInput, userInputError) => {
+		form.removeChild(userInputError);
+		userInputError.classList.remove("form-field__input--error");
+		formInput.classList.remove("form-field__input--error");
+	};
+
+	const showError = () => {
+		const form = document.querySelector(".comments-form");
+		const userInputError = document.createElement("p");
+		userInputError.textContent = "Please fill in a comment.!!!";
+		userInputError.classList.add("form-field__input-text--error");
+		const formInput = document.getElementById("comment");
+		formInput.classList.add("form-field__input--error");
+		form.appendChild(userInputError);
+
+		setTimeout(() => clearError(form, formInput, userInputError), 4000);
+	};
+
+	const handleFormSubmit = (event) => {
+		event.preventDefault();
+		console.log("comment was clicked");
+		const userComment = formValue;
+		if (!userComment) {
+			showError();
+			alert("error");
+			return;
+		}
+		event.target.reset();
+		console.log(commentObj);
+	};
+
+	// const postComment = () => {};
+
 	useEffect(() => {
-		// console.log("useEffect ran");
 		try {
 			getAllVideos(videoId);
 			getSelectedVideo(videoId);
 		} catch (error) {
-			console.log("Error:", error);
+			// console.log("Error:", error);
 		}
 	}, []);
 
@@ -49,7 +87,6 @@ const HomePage = () => {
 	// console.log(params);
 
 	useEffect(() => {
-		console.log("params useeffect");
 		if (Object.keys(params).length !== 0) {
 			try {
 				getAllVideos(params.videoId);
@@ -73,7 +110,11 @@ const HomePage = () => {
 						{selectedVideo && <VideoDescription videoDetails={selectedVideo} />}
 					</VideoDisplayInfo>
 					<CommentBlock>
-						<CommentForm />
+						<CommentForm
+							inputValue={formValue}
+							onInputValueChange={changeFormValue}
+							onSubmit={handleFormSubmit}
+						/>
 						{selectedVideo && <CommentCard comments={selectedVideo.comments} />}
 					</CommentBlock>
 				</div>

@@ -4,7 +4,7 @@
 
 /*  MOBILE  */
 @include breakpoint.small {
-	.comment {
+	.comments {
 		&-form {
 			width: 100%;
 
@@ -39,6 +39,17 @@
 			border-radius: 0.25rem;
 			padding: 0.75rem;
 			margin-bottom: 1rem;
+
+			&--error {
+				outline: 1px solid color.$secondary-error;
+			}
+
+			&-text--error {
+				font-family: "avenir";
+				font-size: 0.875rem;
+				color: color.$secondary-error;
+				text-align: center;
+			}
 
 			&::placeholder {
 				font-family: "avenir";
@@ -75,7 +86,7 @@
 
 /*  TABLET  */
 @include breakpoint.medium {
-	.comment {
+	.comments {
 		&-form {
 			&__layout {
 				width: 100%;
@@ -118,6 +129,17 @@
 			margin-bottom: 1rem;
 			overflow: hidden;
 
+			&--error {
+				outline: 1px solid color.$secondary-error;
+			}
+
+			&-text--error {
+				font-family: "avenir";
+				font-size: 0.875rem;
+				color: color.$secondary-error;
+				text-align: center;
+			}
+
 			&::placeholder {
 				font-family: "avenir";
 				font-size: 0.875rem;
@@ -159,7 +181,7 @@
 
 /*  DESKTOP */
 @include breakpoint.large {
-	.comment {
+	.comments {
 		&-form {
 			&__layout {
 				width: 100%;
@@ -202,6 +224,17 @@
 			padding: 0.5rem;
 			margin-bottom: 1rem;
 			overflow: hidden;
+
+			&--error {
+				outline: 1px solid color.$secondary-error;
+			}
+
+			&-text--error {
+				font-family: "avenir";
+				font-size: 0.875rem;
+				color: color.$secondary-error;
+				text-align: center;
+			}
 
 			&::placeholder {
 				font-family: "avenir";

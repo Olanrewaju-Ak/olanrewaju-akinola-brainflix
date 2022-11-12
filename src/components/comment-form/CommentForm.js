@@ -2,21 +2,27 @@ import React from "react";
 import "./CommentForm.scss";
 import AddCommentIcon from "../../assets/icons/add_comment.svg";
 
-const CommentForm = () => {
+const CommentForm = (props) => {
 	return (
-		<section className="comment-form">
-			<div className="comment-form__layout">
+		<section className="comments-form">
+			<div className="comments-form__layout">
 				<div className="user-avatar"></div>
-				<form action="" id="comment-form" className="form">
+				<form
+					action=""
+					id="comment-form"
+					className="form"
+					onSubmit={(e) => props.onSubmit(e)}
+				>
 					<div className="form__div">
 						<label htmlFor="comment" className="form-field__label">
 							JOIN THE CONVERSATION
 						</label>
 						<textarea
 							className="form-field__input"
-							name="user-comment"
+							value={props.inputValue}
 							id="comment"
 							placeholder="Add a new comment"
+							onChange={(e) => props.onInputValueChange(e.target.value)}
 						></textarea>
 					</div>
 					<div className="btn-container">

@@ -3,10 +3,15 @@ import UploadIcon from "../../assets/icons/upload.svg";
 import UploadImage from "../../assets/images/Upload-video-preview.jpg";
 
 const UploadPage = () => {
+	const handleFormSubmit = (event) => {
+		event.preventDefault();
+		console.log("publish was clicked");
+	};
+
 	return (
 		<section className="upload-page">
 			<h1 className="upload-page__title">Upload Video</h1>
-			<form action="" className="upload-form">
+			<form action="" className="upload-form" onSubmit={handleFormSubmit}>
 				<div className="upload-form__layout">
 					<div className="upload-form__thumbnail">
 						<p className="upload-form__thumbnail-title">VIDEO THUMBNAIL</p>
