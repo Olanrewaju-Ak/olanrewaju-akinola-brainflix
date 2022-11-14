@@ -9,11 +9,14 @@
 		padding: 2rem 1rem;
 		border-top: 1px solid color.$secondary-semi-light;
 		border-bottom: 1px solid color.$secondary-semi-light;
-		margin-bottom: 2rem;
+		margin-bottom: 4rem;
 		display: flex;
+		justify-content: center;
+		text-align: center;
 
 		&__text {
 			@include text-header__mobile;
+			margin-bottom: 2rem;
 		}
 	}
 
@@ -30,10 +33,12 @@
 		border-top: 1px solid color.$secondary-semi-light;
 		border-bottom: 1px solid color.$secondary-semi-light;
 		display: flex;
+		justify-content: center;
+		text-align: center;
 
 		&__text {
-			@include text-header__mobile;
-			margin-bottom: 2rem 0;
+			@include text-header__tablet;
+			margin: 4rem 0;
 		}
 	}
 
@@ -54,7 +59,7 @@
 		margin-bottom: 2rem;
 
 		&__text {
-			@include text-header__mobile;
+			@include text-header__tablet;
 			margin: 4rem 0;
 		}
 	}

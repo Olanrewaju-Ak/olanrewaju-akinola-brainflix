@@ -4,15 +4,10 @@ import UploadImage from "../../assets/images/Upload-video-preview.jpg";
 import { Link } from "react-router-dom";
 
 const UploadPage = () => {
-	const handleFormSubmit = (event) => {
-		event.preventDefault();
-		console.log("publish was clicked");
-	};
-
 	return (
 		<section className="upload-page">
 			<h1 className="upload-page__title">Upload Video</h1>
-			<form action="" className="upload-form" onSubmit={handleFormSubmit}>
+			<form action="" className="upload-form">
 				<div className="upload-form__layout">
 					<div className="upload-form__thumbnail">
 						<p className="upload-form__thumbnail-title">VIDEO THUMBNAIL</p>

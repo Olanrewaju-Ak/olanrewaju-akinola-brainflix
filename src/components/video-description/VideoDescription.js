@@ -5,7 +5,6 @@ import LikesIcon from "../../assets/icons/likes.svg";
 const VideoDescription = ({ videoDetails }) => {
 	const { title, channel, image, description, views, likes, timestamp, comments, ...rest } =
 		videoDetails;
-	// console.log(videoDetails);
 
 	return (
 		<>
