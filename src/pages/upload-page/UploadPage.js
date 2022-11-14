@@ -1,6 +1,7 @@
 import "./UploadPage.scss";
-import UploadIcon from "../../assets/icons/upload.svg";
+import UploadIcon from "../../assets/icons/publish.svg";
 import UploadImage from "../../assets/images/Upload-video-preview.jpg";
+import { Link } from "react-router-dom";
 
 const UploadPage = () => {
 	const handleFormSubmit = (event) => {
@@ -47,10 +48,12 @@ const UploadPage = () => {
 					</div>
 				</div>
 				<div className="buttons">
-					<button className="btn__upload ">
-						<img src={UploadIcon} alt="upload icon" className="icon__upload" />
-						PUBLISH
-					</button>
+					<Link to={"/upload/success"}>
+						<button className="btn__upload ">
+							<img src={UploadIcon} alt="upload icon" className="icon__upload" />
+							PUBLISH
+						</button>
+					</Link>
 					<button className=" btn__upload--borderless">CANCEL</button>
 				</div>
 			</form>

@@ -3,7 +3,6 @@ import "./Header.scss";
 import LogoImage from "../../assets/logo/BrainFlix-logo.svg";
 import SearchIcon from "../../assets/icons/search.svg";
 import UploadIcon from "../../assets/icons/upload.svg";
-// import HomePage from "../../pages/home-page/HomePage";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -11,7 +10,7 @@ const Header = () => {
 		<>
 			<header className="header__container">
 				<nav className="navigation ">
-					<Link to={"/"} className="navigation__logo-link">
+					<Link to="/" className="navigation__logo-link">
 						<img src={LogoImage} alt="band-logo" className="navigation__logo-img" />
 					</Link>
 					<div className="navigation__wrapper">

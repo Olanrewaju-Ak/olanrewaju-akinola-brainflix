@@ -15,7 +15,11 @@ const VideoDescription = ({ videoDetails }) => {
 					<div className="videoInfo__origin">
 						<p className="videoInfo__origin-text">By {channel}</p>
 						<p className="videoInfo__origin-text--light">
-							{new Date(videoDetails.timestamp).toLocaleDateString()}
+							{new Date(videoDetails.timestamp).toLocaleDateString("en-US", {
+								year: "numeric",
+								month: "2-digit",
+								day: "2-digit"
+							})}
 						</p>
 					</div>
 					<div className="videoInfo__icons">
@@ -34,7 +38,11 @@ const VideoDescription = ({ videoDetails }) => {
 				<div className="videoInfo__origin">
 					<p className="videoInfo__origin-text">By {channel}</p>
 					<p className="videoInfo__origin-text--light">
-						{new Date(videoDetails.timestamp).toLocaleDateString()}
+						{new Date(videoDetails.timestamp).toLocaleDateString("en-US", {
+							year: "numeric",
+							month: "2-digit",
+							day: "2-digit"
+						})}
 					</p>
 				</div>
 				<div className="videoInfo__icons">

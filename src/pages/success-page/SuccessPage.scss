@@ -1,0 +1,66 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as color;
+@use "../../styles/partials/breakpoints" as breakpoint;
+
+/* MOBILE */
+@include breakpoint.small {
+	.upload-success {
+		padding: 2rem 1rem;
+		border-top: 1px solid color.$secondary-semi-light;
+		border-bottom: 1px solid color.$secondary-semi-light;
+		margin-bottom: 2rem;
+		display: flex;
+
+		&__text {
+			@include text-header__mobile;
+		}
+	}
+
+	.btn--accent {
+		@include btn-accent;
+		font-size: 0.8125rem;
+	}
+}
+
+/* TABLET */
+@include breakpoint.medium {
+	.upload-success {
+		padding: 2rem 2rem;
+		border-top: 1px solid color.$secondary-semi-light;
+		border-bottom: 1px solid color.$secondary-semi-light;
+		display: flex;
+
+		&__text {
+			@include text-header__mobile;
+			margin-bottom: 2rem 0;
+		}
+	}
+
+	.btn--accent {
+		@include btn-accent;
+		font-size: 0.8725rem;
+	}
+}
+
+/* DESKTOP */
+@include breakpoint.large {
+	.upload-success {
+		padding: 2rem 8rem;
+		border-top: 1px solid color.$secondary-semi-light;
+		border-bottom: 1px solid color.$secondary-semi-light;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 2rem;
+
+		&__text {
+			@include text-header__mobile;
+			margin: 4rem 0;
+		}
+	}
+
+	.btn--accent {
+		@include btn-accent;
+		font-size: 0.8725rem;
+	}
+}

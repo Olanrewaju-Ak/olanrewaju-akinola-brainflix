@@ -14,9 +14,10 @@ import axios from "axios";
 
 const URL = "https://project-2-api.herokuapp.com/videos/";
 const API_KEY = "?api_key=4baecaa9-4473-40d5-82a1-fe4fe0bf846d";
+let defaultV = "84e96018-4022-434e-80bf-000ce4cd12b8";
 
 const HomePage = () => {
-	const [videoId, setVideoId] = useState("84e96018-4022-434e-80bf-000ce4cd12b8");
+	const [videoId, setVideoId] = useState(defaultV);
 	const [videos, setVideos] = useState([]);
 	const [selectedVideo, setSelectedVideo] = useState({});
 
@@ -65,14 +66,13 @@ const HomePage = () => {
 		const userComment = formValue;
 		if (!userComment) {
 			showError();
-			alert("error");
 			return;
 		}
 		event.target.reset();
 		console.log(commentObj);
 	};
 
-	// const postComment = () => {};
+	const postComment = () => {};
 
 	useEffect(() => {
 		try {
@@ -83,6 +83,10 @@ const HomePage = () => {
 		}
 	}, []);
 
+	useEffect(() => {
+		getSelectedVideo(videoId);
+	}, [videoId]);
+
 	const params = useParams();
 	// console.log(params);
 
@@ -90,12 +94,14 @@ const HomePage = () => {
 		if (Object.keys(params).length !== 0) {
 			try {
 				getAllVideos(params.videoId);
-				getSelectedVideo(params.videoId);
+				// getSelectedVideo(params.videoId);
 				// console.log("Second useEffect ran", getSelectedVideo(params.videoId));
 				setVideoId(params.videoId);
 			} catch (error) {
 				console.log("Error:", error);
 			}
+		} else {
+			setVideoId(defaultV);
 		}
 	}, [params]);
 
@@ -104,8 +110,8 @@ const HomePage = () => {
 	return (
 		<>
 			{selectedVideo && <VideoDisplay videoDetails={selectedVideo} />}
-			<div className="app-content">
-				<div className="app-content__left">
+			<div className="home-content">
+				<div className="home-content__left">
 					<VideoDisplayInfo>
 						{selectedVideo && <VideoDescription videoDetails={selectedVideo} />}
 					</VideoDisplayInfo>
@@ -118,7 +124,7 @@ const HomePage = () => {
 						{selectedVideo && <CommentCard comments={selectedVideo.comments} />}
 					</CommentBlock>
 				</div>
-				<div className="app-content__right">
+				<div className="home-content__right">
 					<NextVideo>
 						<VideoCard videos={videos} />
 					</NextVideo>

@@ -12,7 +12,11 @@ function CommentCard({ comments }) {
 							<div className="comment-item__info">
 								<span className="comment-item__name">{comment.name}</span>
 								<span className="comment-item__date">
-									{new Date(comment.timestamp).toLocaleDateString()}
+									{new Date(comment.timestamp).toLocaleDateString("en-US", {
+										year: "numeric",
+										month: "2-digit",
+										day: "2-digit"
+									})}
 								</span>
 							</div>
 							<p className="comment-item__user-comment">{comment.comment}</p>

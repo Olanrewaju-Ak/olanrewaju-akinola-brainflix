@@ -6,7 +6,7 @@
 @include breakpoint.small {
 	.video-display {
 		width: 100vw;
-		height: 40vh;
+		aspect-ratio: 16/9;
 		background-color: color.$secondary-dark;
 
 		&__video {
