@@ -5,7 +5,7 @@
 /* MOBILE */
 @include breakpoint.small {
 	.video-card {
-		width: 100vw;
+		max-width: 18rem;
 		display: flex;
 		gap: 4%;
 		overflow: hidden;
@@ -25,7 +25,7 @@
 		}
 
 		&__description {
-			width: 50%;
+			width: 60%;
 			height: 100%;
 			display: flex;
 			flex-direction: column;
@@ -50,21 +50,25 @@
 			}
 		}
 	}
+
+	.video__link {
+		text-decoration: none;
+	}
 }
 
 /* TABLET */
 @include breakpoint.medium {
 	.video-card {
-		width: 60vw;
+		max-width: 28.75rem;
 		display: flex;
 		gap: 4%;
 		overflow: hidden;
-		margin-bottom: 2rem;
+		margin-bottom: 1.2rem;
 		height: 6.25rem;
 
 		&__poster {
 			width: 35%;
-			height: 100%;
+			height: 90%;
 
 			&-image {
 				width: 100%;
@@ -75,7 +79,7 @@
 		}
 
 		&__description {
-			width: 35%;
+			width: 40%;
 			height: 100%;
 			display: flex;
 			flex-direction: column;
@@ -100,6 +104,9 @@
 			}
 		}
 	}
+	.video__link {
+		text-decoration: none;
+	}
 }
 
 /* DESKTOP */
@@ -109,7 +116,7 @@
 		display: flex;
 		justify-content: space-between;
 		gap: 4%;
-		margin-bottom: 1.5rem;
+		margin-bottom: 1.8rem;
 		height: 4rem;
 		padding-left: 1.5rem;
 
@@ -149,5 +156,8 @@
 				margin-top: 0.25rem;
 			}
 		}
+	}
+	.video__link {
+		text-decoration: none;
 	}
 }

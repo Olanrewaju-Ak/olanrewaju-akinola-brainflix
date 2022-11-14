@@ -5,12 +5,13 @@
 /* MOBILE */
 @include breakpoint.small {
 	.next-video {
+		width: 100vw;
 		padding: 0 1rem 0.5rem;
 
 		&__header {
 			@include text-body__mobile--light;
 			font-weight: 700;
-			margin: 1rem 0;
+			margin: 1rem 0 0.7rem;
 		}
 	}
 }
@@ -23,7 +24,7 @@
 		&__header {
 			@include text-body__mobile--light;
 			font-weight: 700;
-			margin: 1.5rem 0;
+			margin: 1.5rem 0 1.2rem;
 		}
 	}
 }
@@ -32,7 +33,6 @@
 @include breakpoint.large {
 	.next-video {
 		padding: 0;
-		border-left: 1px solid color.$secondary-semi-light;
 
 		&__header {
 			@include text-body__mobile--light;
