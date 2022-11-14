@@ -12,6 +12,7 @@
 /*  TABLET  */
 @include breakpoint.medium {
 	.comment-block {
+		width: 100vw;
 		padding: 0 2rem;
 	}
 }
@@ -19,6 +20,7 @@
 /*  DESKTOP */
 @include breakpoint.large {
 	.comment-block {
+		width: 100%;
 		padding: 0;
 	}
 }

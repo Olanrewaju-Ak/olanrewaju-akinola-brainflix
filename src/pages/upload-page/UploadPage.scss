@@ -1,0 +1,382 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as color;
+@use "../../styles/partials/breakpoints" as breakpoint;
+
+/*  MOBILE  */
+@include breakpoint.small {
+	.upload-page {
+		padding: 0 1rem;
+		border-top: 1px solid color.$secondary-semi-light;
+
+		&__title {
+			@include text-header__mobile;
+		}
+	}
+
+	.upload-form {
+		width: 100%;
+		padding-bottom: 1rem;
+
+		&__layout {
+			border-bottom: 1px solid color.$secondary-semi-light;
+		}
+
+		&__thumbnail {
+			width: 100%;
+
+			&-title {
+				@include text-body__mobile--light;
+				font-weight: 700;
+				margin-bottom: 0.25rem;
+			}
+
+			&-img {
+				height: 20vh;
+				width: 100%;
+				object-fit: fill;
+				border-radius: 0.25rem;
+				margin-bottom: 1rem;
+			}
+		}
+
+		&__input {
+			background-color: color.$secondary-light;
+			@include text-body__mobile;
+			@include border-default;
+			height: 2.5rem;
+			width: 100%;
+			border-radius: 0.25rem;
+			padding: 0.75rem;
+			margin-top: 0.25rem;
+			margin-bottom: 1rem;
+			overflow: hidden;
+			resize: none;
+
+			&::placeholder {
+				font-family: "avenir";
+				font-size: 0.8125rem;
+				color: color.$primary-dark;
+			}
+
+			&:focus {
+				outline: 1px solid color.$primary-accent;
+			}
+
+			&--long {
+				height: 5rem;
+				width: 100%;
+				background-color: color.$secondary-light;
+				@include text-body__mobile;
+				@include border-default;
+				border-radius: 0.25rem;
+				padding: 0.75rem;
+				margin-top: 0.25rem;
+				margin-bottom: 1rem;
+				overflow: hidden;
+				resize: none;
+
+				&::placeholder {
+					font-family: "avenir";
+					font-size: 0.8125rem;
+					color: color.$primary-dark;
+				}
+
+				&:focus {
+					outline: 1px solid color.$primary-accent;
+				}
+			}
+		}
+
+		&__label {
+			@include text-body__mobile--light;
+			font-weight: 700;
+		}
+	}
+
+	.btn__upload {
+		@include btn-accent;
+		width: 100%;
+		position: relative;
+		font-size: 0.8125rem;
+		margin-bottom: 1rem;
+
+		&--borderless {
+			@include btn--plain;
+			width: 100%;
+			font-size: 0.8125rem;
+		}
+	}
+
+	.icon__upload {
+		position: absolute;
+		height: 1rem;
+		top: 25%;
+		left: 0.5rem;
+		height: 1.2rem;
+	}
+}
+
+/* TABLET */
+@include breakpoint.medium {
+	.upload-page {
+		padding: 0 2rem;
+
+		&__title {
+			@include text-header__tablet;
+			margin-top: 2rem;
+			margin-bottom: 1.2rem;
+		}
+	}
+
+	.upload-form {
+		width: 100%;
+		padding-bottom: 1rem;
+
+		&__layout {
+			border-top: 1px solid color.$secondary-semi-light;
+			border-bottom: 1px solid color.$secondary-semi-light;
+		}
+
+		&__thumbnail {
+			width: 50%;
+
+			&-title {
+				@include text-body__tablet--light;
+				font-weight: 700;
+				margin-bottom: 0.25rem;
+			}
+
+			&-img {
+				height: 25vh;
+				width: 100%;
+				object-fit: fill;
+				border-radius: 0.25rem;
+				margin-bottom: 1rem;
+			}
+		}
+
+		&__input {
+			background-color: color.$secondary-light;
+			@include text-body__tablet;
+			@include border-default;
+			height: 2.5rem;
+			width: 100%;
+			border-radius: 0.25rem;
+			padding: 0.75rem;
+			margin-top: 0.25rem;
+			margin-bottom: 1rem;
+			overflow: hidden;
+			resize: none;
+
+			&::placeholder {
+				font-family: "avenir";
+				font-size: 0.875rem;
+				color: color.$primary-dark;
+			}
+
+			&:focus {
+				outline: 1px solid color.$primary-accent;
+			}
+
+			&--long {
+				height: 6rem;
+				width: 100%;
+				background-color: color.$secondary-light;
+				@include text-body__tablet;
+				@include border-default;
+				border-radius: 0.25rem;
+				padding: 0.75rem;
+				margin-top: 0.25rem;
+				margin-bottom: 1rem;
+				overflow: hidden;
+				resize: none;
+
+				&::placeholder {
+					font-family: "avenir";
+					font-size: 0.875rem;
+					color: color.$primary-dark;
+				}
+
+				&:focus {
+					outline: 1px solid color.$primary-accent;
+				}
+			}
+		}
+
+		&__label {
+			@include text-body__tablet--light;
+			font-weight: 700;
+		}
+	}
+
+	.btn__upload {
+		@include btn-accent;
+		width: 9.375rem;
+		position: relative;
+		font-size: 0.875rem;
+		margin-top: 1rem;
+
+		&--borderless {
+			@include btn--plain;
+			width: 9.375rem;
+			margin-top: 1rem;
+			font-size: 0.875rem;
+			margin-right: 2rem;
+		}
+	}
+
+	.icon__upload {
+		position: absolute;
+		height: 1rem;
+		top: 25%;
+		left: 0.5rem;
+		height: 1.2rem;
+	}
+
+	.buttons {
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: row-reverse;
+	}
+}
+
+/* DESKTOP */
+@include breakpoint.large {
+	.upload-page {
+		padding: 0 8rem;
+
+		&__title {
+			@include text-header__tablet;
+		}
+	}
+
+	.upload-form {
+		width: 100%;
+		padding: 1rem;
+
+		&__layout {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			border-top: 1px solid color.$secondary-semi-light;
+			border-bottom: 1px solid color.$secondary-semi-light;
+			gap: 5%;
+			padding: 1rem 0;
+		}
+
+		&__thumbnail {
+			width: 30%;
+
+			&-title {
+				@include text-body__tablet--light;
+				font-weight: 700;
+				margin-bottom: 0.25rem;
+			}
+
+			&-img {
+				height: 100%;
+				width: 100%;
+				object-fit: fill;
+				border-radius: 0.25rem;
+				margin-bottom: 1rem;
+			}
+		}
+
+		&__sections {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 65%;
+			height: 100%;
+		}
+
+		&__div {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__input {
+			background-color: color.$secondary-light;
+			@include text-body__tablet;
+			@include border-default;
+			height: 2.5rem;
+			width: 100%;
+			border-radius: 0.25rem;
+			padding: 0.75rem;
+			margin-top: 0.25rem;
+			margin-bottom: 1rem;
+			overflow: hidden;
+			resize: none;
+
+			&::placeholder {
+				font-family: "avenir";
+				font-size: 0.875rem;
+				color: color.$primary-dark;
+			}
+
+			&:focus {
+				outline: 1px solid color.$primary-accent;
+			}
+
+			&--long {
+				height: 5rem;
+				width: 100%;
+				background-color: color.$secondary-light;
+				@include text-body__tablet;
+				@include border-default;
+				border-radius: 0.25rem;
+				padding: 0.75rem;
+				margin-top: 0.25rem;
+				margin-bottom: 1rem;
+				overflow: hidden;
+				resize: none;
+
+				&::placeholder {
+					font-family: "avenir";
+					font-size: 0.875rem;
+					color: color.$primary-dark;
+				}
+
+				&:focus {
+					outline: 1px solid color.$primary-accent;
+				}
+			}
+		}
+
+		&__label {
+			@include text-body__tablet--light;
+			font-weight: 700;
+			margin: 0;
+		}
+	}
+
+	.btn__upload {
+		@include btn-accent;
+		width: 9.375rem;
+		position: relative;
+		font-size: 0.875rem;
+		margin-top: 1rem;
+
+		&--borderless {
+			@include btn--plain;
+			width: 9.375rem;
+			margin-top: 1rem;
+			font-size: 0.875rem;
+		}
+	}
+
+	.icon__upload {
+		position: absolute;
+		height: 1rem;
+		top: 25%;
+		left: 0.5rem;
+		height: 1.2rem;
+	}
+
+	.buttons {
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: row-reverse;
+	}
+}

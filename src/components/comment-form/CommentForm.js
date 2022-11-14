@@ -4,8 +4,8 @@ import AddCommentIcon from "../../assets/icons/add_comment.svg";
 
 const CommentForm = () => {
 	return (
-		<section className="comment-form">
-			<div className="comment-form__layout">
+		<section className="comments-form">
+			<div className="comments-form__layout">
 				<div className="user-avatar"></div>
 				<form action="" id="comment-form" className="form">
 					<div className="form__div">
@@ -14,7 +14,6 @@ const CommentForm = () => {
 						</label>
 						<textarea
 							className="form-field__input"
-							name="user-comment"
 							id="comment"
 							placeholder="Add a new comment"
 						></textarea>

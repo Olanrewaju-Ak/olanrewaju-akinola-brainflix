@@ -3,15 +3,16 @@ import "./Header.scss";
 import LogoImage from "../../assets/logo/BrainFlix-logo.svg";
 import SearchIcon from "../../assets/icons/search.svg";
 import UploadIcon from "../../assets/icons/upload.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 	return (
 		<>
 			<header className="header__container">
 				<nav className="navigation ">
-					<a href="brainflix.com" className="navigation__logo-link">
+					<Link to="/" className="navigation__logo-link">
 						<img src={LogoImage} alt="band-logo" className="navigation__logo-img" />
-					</a>
+					</Link>
 					<div className="navigation__wrapper">
 						<div className="navigation__wrapper-search">
 							<form action="" className="navigation__form">
@@ -31,10 +32,12 @@ const Header = () => {
 							</form>
 							<div className="navigation__avatar navigation__avatar--mobile"></div>
 						</div>
-						<button className="btn">
-							<img className="icon__upload" src={UploadIcon} alt="upload-icon" />
-							UPLOAD
-						</button>
+						<Link to={"/upload"}>
+							<button className="btn">
+								<img className="icon__upload" src={UploadIcon} alt="upload-icon" />
+								UPLOAD
+							</button>
+						</Link>
 						<div className="navigation__avatar navigation__avatar--tablet"></div>
 					</div>
 				</nav>

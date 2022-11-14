@@ -1,0 +1,27 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as color;
+@use "../../styles/partials/breakpoints" as breakpoint;
+
+/*DESKTOP*/
+
+@include breakpoint.large {
+	.home-content {
+		max-width: breakpoint.$desktop-min-width;
+		@include flex-row-space-btw;
+		align-items: unset;
+		padding: 0 8rem;
+		margin: 0 auto;
+
+		&__left {
+			width: 65%;
+			height: 100%;
+			border-right: 1px solid color.$secondary-semi-light;
+		}
+
+		&__right {
+			width: 35%;
+			height: 100%;
+		}
+	}
+}
