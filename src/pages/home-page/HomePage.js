@@ -12,7 +12,7 @@ import CommentCard from "../../components/comment-card/CommentCard";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const URL = "http://localhost:8080/api/videos/";
+const BACK_END = "http://localhost:8080/videos/";
 // const API_KEY = "?api_key=4baecaa9-4473-40d5-82a1-fe4fe0bf846d";
 let defaultV = "84e96018-4022-434e-80bf-000ce4cd12b8";
 
@@ -22,14 +22,14 @@ const HomePage = () => {
 	const [selectedVideo, setSelectedVideo] = useState({});
 
 	const getAllVideos = async (videoId) => {
-		const { data } = await axios.get(`${URL}`);
+		const { data } = await axios.get(`${BACK_END}`);
 		const dataFilter = data.filter((video) => video.id !== videoId);
 
 		setVideos(dataFilter);
 	};
 
 	const getSelectedVideo = async (videoId) => {
-		const { data } = await axios.get(`${URL}${videoId}`);
+		const { data } = await axios.get(`${BACK_END}${videoId}`);
 
 		setSelectedVideo(data);
 	};
