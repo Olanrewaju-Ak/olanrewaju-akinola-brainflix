@@ -63,6 +63,39 @@
 				outline: 1px solid color.$primary-accent;
 			}
 		}
+		&-field__input--name {
+			background-color: color.$secondary-light;
+			@include text-body__mobile;
+			@include border-default;
+			height: 2.25rem;
+			width: 100%;
+			border-radius: 0.25rem;
+			padding: 0.75rem;
+			margin-bottom: 1rem;
+			resize: none;
+
+			&--error {
+				outline: 1px solid color.$secondary-error;
+			}
+
+			&-text--error {
+				font-family: "avenir";
+				font-size: 0.875rem;
+				color: color.$secondary-error;
+				text-align: center;
+			}
+
+			&::placeholder {
+				font-family: "avenir";
+				font-size: 0.875rem;
+				color: color.$primary-dark;
+			}
+
+			&:focus {
+				outline: 1px solid color.$primary-accent;
+			}
+		}
+
 		&-field__label {
 			@include text-body__mobile--light;
 			font-weight: 700;
@@ -93,6 +126,7 @@
 				width: 100%;
 				display: flex;
 				border-bottom: 1px solid color.$secondary-semi-light;
+				padding-bottom: 1.5rem;
 				gap: 4%;
 			}
 		}
@@ -110,16 +144,50 @@
 	}
 
 	.form {
-		@include flex-row;
-		align-items: center;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
 		padding-bottom: 0.3rem;
 		gap: 4%;
 
 		&__div {
-			width: 30rem;
+			width: 40rem;
 		}
 
 		&-field__input {
+			background-color: color.$secondary-light;
+			@include text-body__tablet;
+			@include border-default;
+			height: 2.5rem;
+			width: 100%;
+			border-radius: 0.25rem;
+			padding: 0.5rem;
+			margin-bottom: 1rem;
+			overflow: hidden;
+			resize: none;
+
+			&--error {
+				outline: 1px solid color.$secondary-error;
+			}
+
+			&-text--error {
+				font-family: "avenir";
+				font-size: 0.875rem;
+				color: color.$secondary-error;
+				text-align: center;
+			}
+
+			&::placeholder {
+				font-family: "avenir";
+				font-size: 0.875rem;
+				color: color.$primary-dark;
+			}
+
+			&:focus {
+				outline: 1px solid color.$primary-accent;
+			}
+		}
+		&-field__input--name {
 			background-color: color.$secondary-light;
 			@include text-body__tablet;
 			@include border-default;
@@ -192,6 +260,7 @@
 				border-bottom: none;
 				gap: 4%;
 				padding-right: 1.5rem;
+				padding-bottom: 1.5rem;
 			}
 		}
 	}
@@ -208,12 +277,11 @@
 	.form {
 		@include flex-row;
 		justify-content: space-between;
-		align-items: center;
-		width: 83%;
+		align-items: flex-end;
 		padding-bottom: 0.3rem;
 
 		&__div {
-			width: 75%;
+			width: 36rem;
 		}
 
 		&-field__input {
@@ -256,10 +324,6 @@
 	}
 
 	.btn {
-		&-container {
-			width: 20%;
-		}
-
 		&__form {
 			@include btn-accent;
 			width: 9.375rem;

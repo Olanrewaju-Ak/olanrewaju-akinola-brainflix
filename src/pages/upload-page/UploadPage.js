@@ -15,7 +15,10 @@ const UploadPage = () => {
 			title: event.target.title.value,
 			description: event.target.description.value
 		};
-		axios.post(`${BACK_END}`, newVideo).then(() => navigate("/"), { replace: true });
+		axios
+			.post(`${BACK_END}`, newVideo)
+			.then(() => navigate("/upload/success"))
+			.then(setTimeout(() => navigate("/"), 1500));
 		event.target.reset();
 	};
 	return (

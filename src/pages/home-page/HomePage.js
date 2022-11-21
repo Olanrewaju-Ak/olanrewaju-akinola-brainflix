@@ -34,6 +34,18 @@ const HomePage = () => {
 		setSelectedVideo(data);
 	};
 
+	const handleCommentSubmit = (event) => {
+		event.preventDefault();
+		const newComment = {
+			name: event.target.name.value,
+			comment: event.target.comment.value
+		};
+		axios.post(`${BACK_END}${videoId}/comments`, newComment).then((response) => {
+			setSelectedVideo(response.data);
+		});
+		event.target.reset();
+	};
+
 	useEffect(() => {
 		try {
 			getAllVideos(videoId);
@@ -67,7 +79,7 @@ const HomePage = () => {
 						{selectedVideo && <VideoDescription videoDetails={selectedVideo} />}
 					</VideoDisplayInfo>
 					<CommentBlock>
-						<CommentForm />
+						<CommentForm handleCommentSubmit={handleCommentSubmit} />
 						{selectedVideo && <CommentCard comments={selectedVideo.comments} />}
 					</CommentBlock>
 				</div>
