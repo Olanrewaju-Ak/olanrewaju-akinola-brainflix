@@ -1,13 +1,30 @@
 import "./UploadPage.scss";
 import UploadIcon from "../../assets/icons/publish.svg";
 import UploadImage from "../../assets/images/Upload-video-preview.jpg";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+const BACK_END = "http://localhost:8080/videos/";
 
 const UploadPage = () => {
+	const navigate = useNavigate();
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		const newVideo = {
+			title: event.target.title.value,
+			description: event.target.description.value
+		};
+		axios
+			.post(`${BACK_END}`, newVideo)
+			.then(() => navigate("/upload/success"))
+			.then(setTimeout(() => navigate("/"), 1500));
+		event.target.reset();
+	};
 	return (
 		<section className="upload-page">
 			<h1 className="upload-page__title">Upload Video</h1>
-			<form action="" className="upload-form">
+			<form action="" className="upload-form" onSubmit={handleSubmit}>
 				<div className="upload-form__layout">
 					<div className="upload-form__thumbnail">
 						<p className="upload-form__thumbnail-title">VIDEO THUMBNAIL</p>
@@ -24,7 +41,7 @@ const UploadPage = () => {
 							</label>
 							<textarea
 								className="upload-form__input"
-								name="user-comment"
+								name="title"
 								id="comment"
 								placeholder="Add a title to your video"
 							></textarea>
@@ -35,7 +52,7 @@ const UploadPage = () => {
 							</label>
 							<textarea
 								className="upload-form__input--long"
-								name="user-comment"
+								name="description"
 								id="comment"
 								placeholder="Add a description to your video"
 							></textarea>
@@ -43,12 +60,12 @@ const UploadPage = () => {
 					</div>
 				</div>
 				<div className="buttons">
-					<Link to={"/upload/success"}>
-						<button className="btn__upload ">
-							<img src={UploadIcon} alt="upload icon" className="icon__upload" />
-							PUBLISH
-						</button>
-					</Link>
+					{/* <Link to={"/upload/success"}> */}
+					<button className="btn__upload ">
+						<img src={UploadIcon} alt="upload icon" className="icon__upload" />
+						PUBLISH
+					</button>
+					{/* </Link> */}
 					<button className=" btn__upload--borderless">CANCEL</button>
 				</div>
 			</form>
